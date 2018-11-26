@@ -1,8 +1,11 @@
 package gildedrose;
 
+import java.util.List;
+
 public class Inventory {
 
     private Item[] items;
+    List <IStrategyUpdate> listStrategy;
 
     public Item[] getItems() {
         return items;
@@ -13,18 +16,14 @@ public class Inventory {
         this.items = items;
     }
 
-    public Inventory() {
-        super();
-        items = new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20),
-                new Item("Aged Brie", 2, 0),
-                new Item("Elixir of the Mongoose", 5, 7),
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Conjured Mana Cake", 3, 6)
-        };
-
+    void updateInventory(){
+        for (){
+            String t = items[i].getName();
+            switch (t){ case(""): listStrategy[0].update(items[i]);
+                case(""): listStrategy[1].update(items[i]);
+        }
     }
+
 
     public void printInventory() {
         System.out.println("***************");
@@ -35,12 +34,12 @@ public class Inventory {
         System.out.println("\n");
     }
 
-    public void updateQuality() {
+    /*public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (items[i].getName() != "Aged Brie"
                     && items[i].getName() != "Backstage passes to a TAFKAL80ETC concert") {
                 if (items[i].getQuality() > 0) {
-                    if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
+                    if (items[i].getName() != "StrategySulfuras, Hand of Ragnaros") {
                         items[i].setQuality(items[i].getQuality() - 1);
                     }
                 }
@@ -64,7 +63,7 @@ public class Inventory {
                 }
             }
 
-            if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
+            if (items[i].getName() != "StrategySulfuras, Hand of Ragnaros") {
                 items[i].setSellIn(items[i].getSellIn() - 1);
             }
 
@@ -72,7 +71,7 @@ public class Inventory {
                 if (items[i].getName() != "Aged Brie") {
                     if (items[i].getName() != "Backstage passes to a TAFKAL80ETC concert") {
                         if (items[i].getQuality() > 0) {
-                            if (items[i].getName() != "Sulfuras, Hand of Ragnaros") {
+                            if (items[i].getName() != "StrategySulfuras, Hand of Ragnaros") {
                                 items[i].setQuality(items[i].getQuality() - 1);
                             }
                         }
@@ -86,13 +85,13 @@ public class Inventory {
                 }
             }
         }
-    }
+    }*/
 
     public static void main(String[] args) {
-        Inventory inventory = new Inventory();
+        //Inventory inventory = new Inventory();
         for (int i = 0; i < 10; i++) {
-            inventory.updateQuality();
-            inventory.printInventory();
+            //inventory.updateQuality();
+            //inventory.printInventory();
         }
     }
 }
